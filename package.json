@@ -1,0 +1,28 @@
+{
+    "name": "@atfotc/scripture-utils",
+    "version": "0.1.0",
+    "description": "Reusable utilities for organising Scriptural books",
+    "main": "build/index.js",
+    "scripts": {
+        "clean": "rimraf build/*",
+        "build": "babel source --out-dir build --ignore node_modules",
+        "test": "npm run clean && npm run build && mocha --timeout 5000 tests"
+    },
+    "author": "Christopher Pitt <cgpitt@gmail.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "@babel/cli": "^7.5.5",
+        "@babel/core": "^7.5.5",
+        "@babel/plugin-transform-modules-commonjs": "^7.5.0",
+        "@babel/preset-env": "^7.5.5",
+        "chai": "^4.2.0",
+        "husky": "^3.0.3",
+        "mocha": "^6.2.0",
+        "rimraf": "^3.0.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run test"
+        }
+    }
+}
